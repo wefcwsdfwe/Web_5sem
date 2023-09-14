@@ -12,10 +12,7 @@ export class HeroesComponent implements OnInit {
   heroes = HEROES;  // heroes - экземпляр массива с героями класса HEROES
 
 
-  selectedHero: Hero = {
-    id: 1,
-    name: 'Windstorm'
-  };
+  selectedHero!: Hero;
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
