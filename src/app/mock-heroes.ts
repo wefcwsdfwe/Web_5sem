@@ -1,7 +1,7 @@
 import { Hero } from './hero';
 
-export const HEROES: Hero[] = [
-  { id: 11, name: 'Dr Nice' },
+export const HEROES: Hero[] = [   // Вопрос: Hero это у насс список из ячеек, почему бы нам не возвращать его в heroservice
+  { id: 11, name: 'Dr Nice' },    // а не константу HEROES ?
   { id: 12, name: 'Narco' },
   { id: 13, name: 'Bombasto' },
   { id: 14, name: 'Celeritas' },
