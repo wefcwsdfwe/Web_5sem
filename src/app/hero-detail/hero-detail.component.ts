@@ -25,9 +25,17 @@ export class HeroDetailComponent implements OnInit {
   }
   
   getHero(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.heroService.getHero(id)
-    .subscribe(hero => this.hero = hero);
+    const id = this.route.snapshot.paramMap.get('id'); // ? означает что может не быть свойства или метода и тогда вернется не значение а undefined это неизвестность , далее я в иф обернул , так как если ты передашь туда undefined  у тебя ошибка ббудет
+	  
+    if(id){
+	    this.heroService.getHero(+id).subscribe(hero => {
+        if(this.hero && hero){
+          this.hero = hero;
+        }
+      }
+        );
+	  }
+    
   }
 
   goBack(): void {
